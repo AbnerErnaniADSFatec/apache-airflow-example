@@ -129,5 +129,5 @@ dmypy.json
 .pyre/
 
 # Apache Airflow Logger
-logs/*
-plugins/*
+logs/*/
+plugins/*/
