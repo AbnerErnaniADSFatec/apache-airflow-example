@@ -16,19 +16,17 @@ Esta plataforma possui uma interface de usuário onde é possível visualizar os
 
 ## Executar o Apache Airflow no docker
 
-Criar o arquivo ``.env` para as permissões das pastas:
+Criar o arquivo `.env` para as permissões das pastas:
 ~~~bash
 echo -e "AIRFLOW_UID=$(id -u)\nAIRFLOW_GID=0" > .env
 ~~~
 
 Executar o comando abaixo para a inicialização das dependências do Airflow como o `Postgres` e o `Redis`:
-
 ~~~bash
 docker-compose up airflow-init
 ~~~
 
-O comando abaixo irá iniciar o serviço do Apache Airflow para a interfaze Web em `0.0.0.0:8080`.
-
+O comando abaixo irá iniciar o serviço do Apache Airflow para a interfaze Web em `0.0.0.0:8080`:
 ~~~bash
 docker-compose up
 ~~~
