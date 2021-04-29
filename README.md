@@ -33,12 +33,12 @@ O comando abaixo irá iniciar o serviço do Apache Airflow para a interfaze Web 
 docker-compose up
 ~~~
 
-Para retornar a versão do APache Airflow:
+Para retornar a versão do Apache Airflow instalada:
 ~~~bash
 docker exec <container_id> airflow version
 ~~~
 
-Acessar as `DAGs` criadas com a API, como por exemplo o `hello-world`:
+Acessar as `DAGs` criadas com a API, como por exemplo o `hello-world.py`:
 ~~~bash
 curl -X GET --user "airflow:airflow" "http://localhost:8080/api/v1/dags"
 ~~~
