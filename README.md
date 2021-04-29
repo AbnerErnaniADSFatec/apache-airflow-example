@@ -16,6 +16,11 @@ Esta plataforma possui uma interface de usuário onde é possível visualizar os
 
 #### Executar o Apache Airflow no docker
 
+Criar o arquivo ``.env` para as permissões das pastas:
+~~~bash
+echo -e "AIRFLOW_UID=$(id -u)\nAIRFLOW_GID=0" > .env
+~~~
+
 Executar o comando abaixo para a inicialização das dependências do Airflow como o `Postgres` e o `Redis`:
 
 ~~~bash
@@ -26,6 +31,21 @@ O comando abaixo irá iniciar o serviço do Apache Airflow para a interfaze Web 
 
 ~~~bash
 docker-compose up
+~~~
+
+Para retornar a versão do APache Airflow:
+~~~bash
+docker exec <container_id> airflow version
+~~~
+
+Acessar as `DAGs` criadas com a API, como por exemplo o `hello-world`:
+~~~bash
+curl -X GET --user "airflow:airflow" "http://localhost:8080/api/v1/dags"
+~~~
+
+Derrubar todos os containers criados para o Apache Airflow:
+~~~bash
+docker-compose down
 ~~~
 
 > O arquivo [`hello-world`](./dags/hello-world.py) possui um template para a criação de `DAGs` e procedimentos.
