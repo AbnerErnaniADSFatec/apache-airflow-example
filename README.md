@@ -14,7 +14,7 @@ A plataforma permite o monitoramento de procedimentos enquanto ainda estão em e
 
 Esta plataforma possui uma interface de usuário onde é possível visualizar os dados dos procedimentos de forma simples
 
-#### Executar o Apache Airflow no docker
+## Executar o Apache Airflow no docker
 
 Criar o arquivo ``.env` para as permissões das pastas:
 ~~~bash
